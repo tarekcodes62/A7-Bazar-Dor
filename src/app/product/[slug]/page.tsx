@@ -1,3 +1,4 @@
+import Loading from '@/app/loading';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
@@ -35,7 +36,7 @@ export default function ProductDetails({
   params: { slug: string };
 }) {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <ProductDetailsCard params={params} />
     </Suspense>
   );

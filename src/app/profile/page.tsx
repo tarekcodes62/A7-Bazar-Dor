@@ -45,8 +45,8 @@ const Profile = () => {
               T
             </h2>
             <div className="">
-              <h2 className="text-xl font-medium">Tarek Rahman</h2>
-              <p className="text-gray-500">mdtarekr199@gmail.com</p>
+              <h2 className="text-xl font-medium">{user?.name}</h2>
+              <p className="text-gray-500">{user?.email}</p>
             </div>
           </div>
           <button

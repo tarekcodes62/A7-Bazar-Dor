@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর | BazarDor
 
-## Getting Started
+**Know today's market prices at a glance!**
 
-First, run the development server:
+BazarDor is a Bengali-focused market price tracking web application that helps
+users explore daily product prices, check price changes, browse categories, and
+make informed shopping decisions.
+
+## ✨ Key Features
+
+- 📊 **Market Price Updates:** Explore product prices and daily price changes.
+- 🛍️ **Product Categories:** Browse products by category and find relevant
+  market information.
+- ↕️ **Price Sorting:** Sort products by ascending or descending price.
+- 🔐 **Authentication:** Sign up and sign in using email/password and social
+  login options.
+- 👤 **User Profile:** Access a protected profile page and manage account
+  information.
+- 📱 **Responsive Design:** Enjoy a user-friendly interface on mobile, tablet,
+  and desktop.
+- ⚡ **Loading Skeletons:** Display loading placeholders while product data is
+  loading.
+- 🚫 **Error Handling:** Provide appropriate not-found pages for unavailable
+  products or categories.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Next.js** — React framework for web applications
+- **React** — Component-based user interfaces
+- **TypeScript** — Type-safe development
+- **Tailwind CSS** — Responsive styling
+- **daisyUI** — UI components
+- **Better Auth** — Authentication and session management
+- **Lucide React** — Icons
+- **React Loading Skeleton** — Loading placeholders
+- **Vercel** — Deployment and hosting
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/tarekcodes62/A7-Bazar-Dor.git
+```
+
+### 2. Navigate to the project
+
+```bash
+cd A7-Bazar-Dor
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env.local` file in the project root and add the environment variables
+required by your project.
+
+Example:
+
+```env
+BETTER_AUTH_URL=http://localhost:3000
+BETTER_AUTH_SECRET=your-secret-key
+
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
+```
+
+Add any required database environment variables according to your configuration.
+
+**Note:** Never commit your secret keys or `.env.local` file to GitHub.
+
+### 5. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 6. Build the project
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application is deployed on Vercel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Live Demo:** https://a7-bazar-dor-self.vercel.app/
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 Project Purpose
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+BazarDor aims to make everyday market price information easier to access through
+a simple, responsive, and Bengali-friendly web application.
+
+---
+
+**Developed with ❤️ using Next.js**
