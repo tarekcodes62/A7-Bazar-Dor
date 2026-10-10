@@ -1,6 +1,10 @@
+import Loading from '@/app/loading';
 import BanglaDate from '@/components/BanglaDate';
+import NavbarButtons from '@/components/NavbarButtons';
 import NavLink from '@/components/NavLink';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Suspense } from 'react';
 
 interface Categore {
   id: string;
@@ -11,7 +15,7 @@ interface Categore {
 
 const Navber = async () => {
   const respons = await fetch(
-    'https://api.api-store.workers.dev/api/bazardor/categories',
+    'https://openapi.programming-hero.com/api/bazardor/categories',
     {
       next: {
         revalidate: 3600,
@@ -20,9 +24,9 @@ const Navber = async () => {
   );
   const categories: Categore[] = await respons.json();
   return (
-    <header className="">
-      <div className="px-12 max-w-7xl mx-auto flex items-center justify-between py-2 border-b border-b-gray-200">
-        <div className="flex items-center gap-2">
+    <header className="sticky top-0 z-50 bg-white">
+      <div className="px-6 md:px-10 max-w-6xl mx-auto flex items-center justify-between py-2 border-b border-b-gray-200">
+        <Link href={'/'} className="flex items-center gap-2">
           {/* logo */}
           <div className=" bg-green-700 rounded-md p-2">
             <Image
@@ -35,28 +39,21 @@ const Navber = async () => {
           </div>
           {/* content */}
           <div className="">
-            <h2 className="text-2xl font-medium -mb-1">বাজার দর</h2>
-            <p className="text-sm text-gray-500">
+            <h2 className="text-xl md:text-2xl font-medium -mb-1">বাজার দর</h2>
+            <p className="text-[10px] md:text-sm text-gray-500">
               <BanglaDate />
             </p>
           </div>
-        </div>
-        <div className="flex items-center gap-2">
-          <button className="py-2 px-4 rounded-md hover:bg-gray-200 duration-150">
-            সাইন ইন
-          </button>
-          <button className="py-2 px-4 bg-green-700 text-white rounded-md hover:bg-green-800">
-            সাইন আপ
-          </button>
-        </div>
+        </Link>
+        <NavbarButtons />
       </div>
-      <nav className="max-w-7xl mx-auto px-12 mt-2 border-b border-b-gray-200 pb-2 overflow-x-scroll md:overflow-x-hidden">
-        <ul className="flex gap-2">
-          {categories?.map(categore => (
-            <NavLink key={categore.id} categore={categore} />
-          ))}
-        </ul>
-      </nav>
+      <div className="border-b border-b-gray-200">
+        <nav className="max-w-6xl mx-auto px-6 md:px-10 mt-2  pb-2 overflow-x-scroll md:overflow-x-hidden">
+          <Suspense fallback={<Loading />}>
+            <NavLink categories={categories} />
+          </Suspense>
+        </nav>
+      </div>
     </header>
   );
 };
