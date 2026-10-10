@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import { Noto_Sans_Bengali } from 'next/font/google';
 import './globals.css';
 import Navber from '@/shared/Navber';
+import Marquees from '@/components/Marquee';
+import Footer from '@/shared/Footer';
+import { Toaster } from 'react-hot-toast';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const noto_Sans_Bengali = Noto_Sans_Bengali({
   subsets: ['latin', 'bengali'],
@@ -21,7 +25,10 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     >
       <body className="min-h-full flex flex-col">
         <Navber />
+        <Marquees />
         {children}
+        <Footer />
+        <Toaster />
       </body>
     </html>
   );
